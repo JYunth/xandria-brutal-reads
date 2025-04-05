@@ -22,6 +22,10 @@ export default {
 			fontFamily: {
 				serif: ['Playfair Display', 'serif'],
 				sans: ['Inter', 'sans-serif'],
+				almendra: ['Almendra', 'serif'],
+				firacode: ['Fira Code', 'monospace'],
+				notoserif: ['Noto Serif', 'serif'],
+				space: ['Space Grotesk', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -67,6 +71,7 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
+				beige: 'hsl(var(--beige))',
 				xandria: {
 					maroon: '#800020',
 					brown: '#654321',

@@ -24,31 +24,31 @@ const WalletConnectModal = ({ isOpen, setIsOpen }: WalletConnectModalProps) => {
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent className="sm:max-w-md border-2 border-black">
+      <DialogContent className="sm:max-w-md border-2 border-black bg-beige">
         <DialogHeader>
-          <DialogTitle className="text-center font-serif text-2xl">Connect your Wallet</DialogTitle>
-          <DialogDescription className="text-center">
+          <DialogTitle className="text-center font-almendra font-medium text-3xl">Connect your Wallet</DialogTitle>
+          <DialogDescription className="text-center font-space text-md font-medium text-muted-foreground">
             Connect your wallet to access Xandria's decentralized library.
           </DialogDescription>
         </DialogHeader>
-        <div className="grid gap-6 py-4">
+        <div className="grid gap-6 py-4 font-notoserif">
           <Button
             onClick={handleConnect}
-            className="w-full bg-accent hover:bg-accent/90"
+            className="w-full bg-accent hover:bg-accent/90 transition-colors duration-300"
           >
-            Connect MetaMask
+            Connect Petra
           </Button>
           <Button
             onClick={handleConnect}
             variant="outline"
-            className="w-full border-primary/20 hover:bg-accent/10"
+            className="w-full border-primary/20 hover:bg-muted hover:text-muted-foreground transition-colors duration-300"
           >
             Connect WalletConnect
           </Button>
           <Button
             onClick={handleConnect}
             variant="outline"
-            className="w-full border-primary/20 hover:bg-accent/10"
+            className="w-full border-primary/20 hover:bg-muted hover:text-muted-foreground transition-colors duration-300"
           >
             Connect Coinbase Wallet
           </Button>
