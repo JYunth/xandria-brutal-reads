@@ -18,10 +18,14 @@ const Navbar = () => {
   return (
     <header className="border-b border-border bg-card/80 backdrop-blur-md">
       <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          <Link to="/" className="font-almendra text-2xl font-bold text-accent">
-            XANDRIA
-          </Link>
+        {/* Added relative and justify-center */}
+        <div className="relative flex items-center justify-center">
+          {/* Positioned logo absolutely */}
+          <div className="absolute left-4 top-1/2 -translate-y-1/2">
+            <Link to="/" className="font-almendra text-2xl font-bold text-accent">
+              XANDRIA
+            </Link>
+          </div>
 
           {isConnected && (
             <nav className="hidden md:flex items-center space-x-8">
@@ -43,7 +47,8 @@ const Navbar = () => {
             </nav>
           )}
 
-          <div className="flex items-center space-x-4">
+          {/* Positioned profile section absolutely */}
+          <div className="absolute right-4 top-1/2 flex -translate-y-1/2 items-center space-x-4">
             {isConnected ? (
               <>
                 <span className="hidden md:block text-sm text-muted-foreground">
