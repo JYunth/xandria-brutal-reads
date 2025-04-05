@@ -23,6 +23,7 @@ backend/.vscode/
 *.njsproj
 *.sln
 *.sw?
+.env
 
 bun.lock
 bun.lockb

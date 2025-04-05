@@ -5,7 +5,7 @@ import { useBooks } from '@/context/BookContext';
 import PDFViewer from '@/components/Reader/PDFViewer';
 import AISidebar from '@/components/Reader/AISidebar';
 
-const epubUrl = "https://yl1s8z81y8.ufs.sh/f/PlGaYgnK59GSErdkLQqtQVmP2ZFgHqEekzwY48I7DjcbsJXB";
+const epubUrl = "https://backend.caco3.workers.dev/book/2656" ;
 
 const ReaderPage = () => {
   const { bookId } = useParams<{ bookId: string }>();
