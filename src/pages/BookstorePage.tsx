@@ -165,7 +165,7 @@ const BookstorePage = () => {
       </section>
 
       {/* 2. Filter + Sort Toolbar */}
-      <section className="sticky top-[60px] z-10 bg-background py-4 mb-8 border-b">
+      <section className="top-[60px] z-10 bg-background py-4 mb-8 border-b">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-2 flex-wrap"> {/* Left side of toolbar */}
             {/* Genre Filters - Using simple select for now, replace with multi-select later */}
@@ -462,15 +462,9 @@ const BookstorePage = () => {
       {/* 8. AI-Powered Book Assistant (Optional) */}
       {/* TODO: Implement if needed */}
 
-      {/* 9. Legal + Transparency Footer */}
-      <footer className="mt-16 pt-8 border-t text-center text-sm text-muted-foreground space-y-2">
-        {/* TODO: Add actual links */}
-        <div className="flex justify-center gap-4">
-          <a href="#" className="hover:text-primary">Terms of Use</a>
-          <a href="#" className="hover:text-primary">Royalty Splits</a>
-          <a href="#" className="hover:text-primary">Smart Contracts</a>
-        </div>
-        <p>&copy; {new Date().getFullYear()} Xandria. All rights reserved.</p>
+      {/* 9. Footer */}
+      <footer className="pt-8 border-t font-space text-center text-sm font-medium text-muted-foreground">
+        <p>made with love by team minions in a durag ❤️</p>
       </footer>
 
       {/* 6. What You Own (Mini Library Drawer) */}

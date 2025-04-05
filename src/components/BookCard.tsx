@@ -70,7 +70,7 @@ export const BookCard = ({ book, inLibrary = false }: BookCardProps) => {
               <TooltipTrigger asChild>
                 {/* Wrap Badge in a span for proper ref forwarding */}
                 <span>
-                  <Badge variant="secondary" className="bg-purple-100 text-purple-800 dark:bg-purple-900/50 dark:text-purple-300 border-purple-300 cursor-default">
+                  <Badge variant="secondary" className="bg-purple-100 hover:text-purple-100 text-purple-800 dark:bg-purple-900/50 dark:text-purple-300 border-purple-300 cursor-default">
                     <Sparkles className="h-3 w-3 mr-1" /> NFT
                   </Badge>
                 </span>
@@ -87,7 +87,7 @@ export const BookCard = ({ book, inLibrary = false }: BookCardProps) => {
               <TooltipTrigger asChild>
                  {/* Wrap Badge in a span for proper ref forwarding */}
                  <span>
-                  <Badge variant="secondary" className="bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300 border-blue-300 cursor-default">
+                  <Badge variant="secondary" className="bg-blue-100 hover:text-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300 border-blue-300 cursor-default">
                     <ShieldCheck className="h-3 w-3 mr-1" /> DRM
                   </Badge>
                  </span>
@@ -104,7 +104,7 @@ export const BookCard = ({ book, inLibrary = false }: BookCardProps) => {
               <TooltipTrigger asChild>
                  {/* Wrap Badge in a span for proper ref forwarding */}
                  <span>
-                  <Badge variant="secondary" className="bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300 border-green-300 cursor-default">
+                  <Badge variant="secondary" className="bg-green-100 hover:text-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300 border-green-300 cursor-default">
                     <Verified className="h-3 w-3 mr-1" /> Verified
                   </Badge>
                  </span>

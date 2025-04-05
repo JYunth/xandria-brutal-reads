@@ -205,7 +205,7 @@ const LandingPage = () => {
 
             {/* Footer */}
             <footer className="font-space p-8 text-center text-sm font-medium text-muted-foreground snap-end">
-                <p>© 2025 Xandria - Reviving the Library of Alexandria for the Web3 Era</p>
+                <p>made with love by team minions in a durag❤️</p>
             </footer>
 
             <WalletConnectModal isOpen={isModalOpen} setIsOpen={setIsModalOpen} />

@@ -19,7 +19,7 @@ const Navbar = () => {
     <header className="border-b border-border bg-card/80 backdrop-blur-md">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="font-serif text-2xl font-bold text-accent">
+          <Link to="/" className="font-almendra text-2xl font-bold text-accent">
             XANDRIA
           </Link>
 
