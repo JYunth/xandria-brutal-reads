@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useRef } from 'react'; // Import useRef
 import { useNavigate } from 'react-router-dom';
 // Slider import removed
 import Stepper, { Step } from '@/components/ui/Stepper'; // Import Stepper
@@ -21,6 +21,8 @@ const OnboardingPage = () => {
   const [age, setAge] = useState('');
   const [readingLevel, setReadingLevel] = useState(readingLevels[2]);
   const [englishProficiency, setEnglishProficiency] = useState(3);
+  const [isOnboardingComplete, setIsOnboardingComplete] = useState(false); // Add completion state
+  const videoRef = useRef<HTMLVideoElement>(null); // Ref for video element
 
   const { updateUserProfile } = useAuth();
   const navigate = useNavigate();
@@ -38,22 +40,33 @@ const OnboardingPage = () => {
     });
 
     toast.success('Profile created! Welcome to Xandria.');
-    navigate('/bookstore');
+    // Don't navigate immediately, set completion state instead
+    setIsOnboardingComplete(true); 
   };
+
+  const handleVideoEnd = () => {
+    navigate('/bookstore'); // Navigate after video ends
+  };
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background marble-texture py-12 px-4">
       {/* Apply brutalist container style directly */}
-      <div className="w-full max-w-lg brutalist-container p-0"> 
-        {/* Removed padding p-0 as Stepper adds its own */}
-        <h2 className="font-serif text-2xl font-bold mb-6 text-center pt-8 px-8">Welcome to Xandria</h2> 
-        {/* Added padding back to title */}
+      {/* Adjusted padding for completion state */}
+      <div className={`w-full max-w-lg brutalist-container ${isOnboardingComplete ? 'p-8' : 'p-0'}`}> 
         
-        {/* Old step indicator removed */}
+        {!isOnboardingComplete ? (
+          <>
+            {/* Stepper Section */}
+            {/* Removed padding p-0 as Stepper adds its own */}
+            <h2 className="font-serif text-2xl font-bold mb-6 text-center pt-8 px-8">Welcome to Xandria</h2> 
+            {/* Added padding back to title */}
+            
+            {/* Old step indicator removed */}
 
-        <Stepper
-          initialStep={1}
-          onFinalStepCompleted={handleComplete}
+            <Stepper
+              initialStep={1}
+              onFinalStepCompleted={handleComplete}
           // Override default Stepper styling to fit brutalist theme
           className="flex-none min-h-0 p-0" // Remove Stepper's default layout/padding
           stepCircleContainerClassName="shadow-none rounded-none border-none max-w-full" // Remove Stepper's inner container border/shadow/rounding/max-width
@@ -164,9 +177,26 @@ const OnboardingPage = () => {
             </div> {/* Added missing closing div */}
           </Step>
         </Stepper>
-        {/* End Stepper */}
-        
-        {/* Old buttons removed */}
+            {/* End Stepper */}
+            
+            {/* Old buttons removed */}
+          </>
+        ) : (
+          <>
+            {/* Completion Animation Section */}
+            <div className="flex flex-col items-center justify-center animate-fade-in">
+              <video 
+                ref={videoRef}
+                src="/lottie/ok.mp4" 
+                autoPlay 
+                muted // Mute if no sound needed, prevents autoplay issues
+                onEnded={handleVideoEnd}
+                className="w-48 h-48 mb-4" // Adjust size as needed
+              />
+              <p className="text-xl font-medium">All set!</p>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
