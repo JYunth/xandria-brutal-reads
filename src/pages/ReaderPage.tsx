@@ -5,6 +5,8 @@ import { useBooks } from '@/context/BookContext';
 import PDFViewer from '@/components/Reader/PDFViewer';
 import AISidebar from '@/components/Reader/AISidebar';
 
+const epubUrl = "https://yl1s8z81y8.ufs.sh/f/PlGaYgnK59GSErdkLQqtQVmP2ZFgHqEekzwY48I7DjcbsJXB";
+
 const ReaderPage = () => {
   const { bookId } = useParams<{ bookId: string }>();
   const { userBooks, setCurrentBook, currentBook } = useBooks();
@@ -44,7 +46,7 @@ const ReaderPage = () => {
     <div className="h-[calc(100vh-5rem)] -mt-8 -mx-4">
       <div className="flex h-full">
         <div className="flex-1 overflow-hidden">
-          <PDFViewer bookId={bookId || ''} />
+          <PDFViewer epubUrl={epubUrl} />
         </div>
         <div className="w-80">
           <AISidebar />
