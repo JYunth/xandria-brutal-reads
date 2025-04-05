@@ -1,0 +1,14 @@
+[package]
+name = "bookstore"
+version = "1.0.0"
+authors = []
+
+[addresses]
+bookstore_addr = "_"
+aptos_token_objects = "0x4"
+
+[dependencies]
+AptosFramework = { git = "https://github.com/aptos-labs/aptos-core.git", rev = "mainnet", subdir = "aptos-move/framework/aptos-framework" }
+AptosTokenObjects = { git = "https://github.com/aptos-labs/aptos-core.git", rev = "mainnet", subdir = "aptos-move/framework/aptos-token-objects" }
+
+[dev-dependencies]
