@@ -5,6 +5,7 @@ import { useAuth } from '@/context/AuthContext';
 import { motion } from 'framer-motion'; // Import motion
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import GridDistortion from '@/components/ui/GridDistortion'; // Import the new component
 
 const LandingPage = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -29,8 +30,21 @@ const LandingPage = () => {
     return (
         <div className="relative bg-[#fff0db] snap-y snap-mandatory overflow-y-auto">
             {/* Hero Section */}
-            <section className="min-h-screen snap-start flex flex-col">
-                <header className="p-6 flex items-center justify-between">
+            <section className="relative min-h-screen snap-start flex flex-col"> {/* Added relative positioning */}
+                {/* Grid Distortion Background */}
+                <div className="absolute inset-0 z-0"> {/* Position behind header/main */}
+                  <GridDistortion
+                    imageSrc="/bg.png" // Use the specified image
+                    grid={50}
+                    mouse={0.20}
+                    strength={0.15}
+                    relaxation={0.9}
+                    className="w-full h-full" // Ensure it fills the container
+                  />
+                </div>
+
+                {/* Make header and main relative to stack above background */}
+                <header className="relative z-10 p-6 flex items-center justify-between">
                     <h1 className="font-almendra text-2xl font-bold text-accent">XANDRIA</h1>
                     <div>
                         {isConnected ? (
@@ -95,11 +109,11 @@ const LandingPage = () => {
                 </motion.div>
 
 
-                <main className="relative flex flex-1 flex-col items-center justify-center px-4 text-center z-10"> {/* Add relative and z-10 */}
-                    <div className="max-w-fit mx-auto flex flex-col items-center justify-center">
+                {/* Apply centering directly to main, allow pointer events to pass through */}
+                <main className="relative flex flex-1 flex-col items-center justify-center px-4 text-center z-10 pointer-events-none">
                         <SplitText
                             text="The World's Knowledge"
-                            className="font-almendra font-medium text-7xl text-center"
+                            className="font-almendra font-medium text-7xl text-center max-w-fit"
                             delay={80}
                             animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
                             animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
@@ -136,7 +150,7 @@ const LandingPage = () => {
                             size="lg"
                             onClick={handleGetStarted}
                             className={
-                                "text-lg px-8 py-6 font-notoserif max-w-fit transition-all duration-700 ease-out " +
+                                "text-lg px-8 py-6 font-notoserif max-w-fit transition-all duration-700 ease-out pointer-events-auto " + // Re-enable pointer events for the button
                                 (showFloatingText
                                     ? "opacity-100 translate-y-0"
                                     : "opacity-0 translate-y-5")
@@ -144,7 +158,6 @@ const LandingPage = () => {
                         >
                             Begin Your Journey
                         </Button>
-                    </div>
                 </main>
             </section>
 
