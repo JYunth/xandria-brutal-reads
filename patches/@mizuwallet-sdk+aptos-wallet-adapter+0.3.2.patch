@@ -1,0 +1,13 @@
+diff --git a/node_modules/@mizuwallet-sdk/aptos-wallet-adapter/dist/index.js b/node_modules/@mizuwallet-sdk/aptos-wallet-adapter/dist/index.js
+index a9d4f33..a8ae06d 100644
+--- a/node_modules/@mizuwallet-sdk/aptos-wallet-adapter/dist/index.js
++++ b/node_modules/@mizuwallet-sdk/aptos-wallet-adapter/dist/index.js
+@@ -2,7 +2,7 @@ var wr = Object.defineProperty;
+ var pr = (c, i, o) => i in c ? wr(c, i, { enumerable: !0, configurable: !0, writable: !0, value: o }) : c[i] = o;
+ var W = (c, i, o) => pr(c, typeof i != "symbol" ? i + "" : i, o);
+ import { Network as fr, AccountAddress as br, Deserializer as Er, AccountAuthenticator as vr } from "@aptos-labs/ts-sdk";
+-import { Mizu as mr } from "@mizuwallet-sdk/core";
++// import { Mizu as mr } from "@mizuwallet-sdk/core"; // Commented out
+ import { Buffer as Ur } from "buffer";
+ var Rr = "aptos:devnet", Ir = "aptos:testnet", Cr = "aptos:localnet", Sr = "aptos:mainnet", Br = [Rr, Ir, Cr, Sr], st = ((c) => (c[c.Unauthorized = 4100] = "Unauthorized", c[c.InternalError = -30001] = "InternalError", c))(st || {}), Wt = Object.freeze({ 4100: { status: "Unauthorized", message: "The requested method and/or account has not been authorized by the user." }, [-30001]: { status: "Internal error", message: "Something went wrong within the wallet." } }), Rt = class nr extends Error {
+   constructor(i, o) {

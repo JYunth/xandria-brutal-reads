@@ -1,0 +1,12 @@
+diff --git a/node_modules/@identity-connect/wallet-api/dist/index.mjs b/node_modules/@identity-connect/wallet-api/dist/index.mjs
+index f7d9112..1442891 100644
+--- a/node_modules/@identity-connect/wallet-api/dist/index.mjs
++++ b/node_modules/@identity-connect/wallet-api/dist/index.mjs
+@@ -1,6 +1,6 @@
+ // src/serialization/bcsSerialization.ts
+ import { Deserializer, Hex } from "@aptos-labs/ts-sdk";
+-import { BCS } from "aptos";
++// import { BCS } from "aptos"; // Commented out
+ function isBcsSerializableV1(value) {
+   return value?.serialize !== void 0;
+ }

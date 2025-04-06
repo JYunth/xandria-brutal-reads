@@ -1,0 +1,13 @@
+diff --git a/node_modules/@aptos-connect/web-transport/dist/index.mjs b/node_modules/@aptos-connect/web-transport/dist/index.mjs
+index 4735e49..e4e8b07 100644
+--- a/node_modules/@aptos-connect/web-transport/dist/index.mjs
++++ b/node_modules/@aptos-connect/web-transport/dist/index.mjs
+@@ -143,7 +143,7 @@ import {
+   encodePopupWalletRequest,
+   makePopupWalletRequestChallenge
+ } from "@aptos-connect/wallet-api";
+-import { postEvent as postTelegramEvent } from "@telegram-apps/bridge";
++// import { postEvent as postTelegramEvent } from "@telegram-apps/bridge"; // Commented out
+ import { v4 as randomUUID } from "uuid";
+ 
+ // src/telegram/createWalletRequest.ts

@@ -1,12 +1,14 @@
 
 import { Link, useLocation } from 'react-router-dom';
-import { useAuth } from '@/context/AuthContext';
-import { Book, Home, User, LogOut } from 'lucide-react';
+import { useAuth } from '@/context/AuthContext'; // Keep useAuth for routing logic if needed elsewhere
+import { Book, Home, User } from 'lucide-react'; // Removed LogOut
 import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
+// Removed Button import from '@/components/ui/button'
+import { WalletSelector } from '@/components/wallet/WalletSelector'; // Import WalletSelector
 
 const Navbar = () => {
-  const { isConnected, user, disconnectWallet } = useAuth();
+  // Keep isConnected from useAuth if needed for nav item display, etc.
+  const { isConnected } = useAuth(); 
   const location = useLocation();
 
   const navItems = [
@@ -47,24 +49,9 @@ const Navbar = () => {
             </nav>
           )}
 
-          {/* Positioned profile section absolutely */}
+          {/* Replaced profile section with WalletSelector */}
           <div className="absolute right-4 top-1/2 flex -translate-y-1/2 items-center space-x-4">
-            {isConnected ? (
-              <>
-                <span className="hidden md:block text-sm text-muted-foreground">
-                  {user?.name || user?.address.substring(0, 8)}...
-                </span>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={disconnectWallet}
-                  className="flex items-center space-x-2"
-                >
-                  <LogOut className="h-4 w-4" />
-                  <span className="hidden md:inline">Disconnect</span>
-                </Button>
-              </>
-            ) : null}
+            <WalletSelector />
           </div>
         </div>
       </div>

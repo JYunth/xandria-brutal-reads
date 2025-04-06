@@ -1,0 +1,19 @@
+diff --git a/node_modules/@aptos-labs/wallet-adapter-react/dist/index.mjs b/node_modules/@aptos-labs/wallet-adapter-react/dist/index.mjs
+index 945a392..4dc9066 100644
+--- a/node_modules/@aptos-labs/wallet-adapter-react/dist/index.mjs
++++ b/node_modules/@aptos-labs/wallet-adapter-react/dist/index.mjs
+@@ -77,10 +77,10 @@ function useWallet() {
+ }
+ 
+ // src/WalletProvider.tsx
+-import {
+-  SolanaDerivedWallet
+-} from "@aptos-labs/derived-wallet-solana";
+-import { EIP1193DerivedWallet } from "@aptos-labs/derived-wallet-ethereum";
++// import {
++//   SolanaDerivedWallet
++// } from "@aptos-labs/derived-wallet-solana"; // Commented out
++// import { EIP1193DerivedWallet } from "@aptos-labs/derived-wallet-ethereum"; // Commented out
+ import { jsx } from "react/jsx-runtime";
+ var initialState = {
+   connected: false,
